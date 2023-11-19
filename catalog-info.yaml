@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "aws-app-2"
+  description: "just a test app"
+  annotations:
+    github.com/project-slug: hngiap94/aws-app-2
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/admin"
+  dependsOn:
+    - component:default/demo-component
+    - resouce:demo-db
+  providesApis:
+    - demo-provided-apis
+  consumesApis:
+    - demo-consumed-apis
